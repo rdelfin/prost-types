@@ -1,6 +1,7 @@
 /// The version number of protocol compiler.
 #[derive(Clone, PartialEq, ::prost::Message)]
 #[prost(package="google.protobuf.compiler")]
+#[prost(source_name="Version")]
 pub struct Version {
     #[prost(int32, optional, tag="1")]
     pub major: ::core::option::Option<i32>,
@@ -16,6 +17,7 @@ pub struct Version {
 /// An encoded CodeGeneratorRequest is written to the plugin's stdin.
 #[derive(Clone, PartialEq, ::prost::Message)]
 #[prost(package="google.protobuf.compiler")]
+#[prost(source_name="CodeGeneratorRequest")]
 pub struct CodeGeneratorRequest {
     /// The .proto files that were explicitly listed on the command-line.  The
     /// code generator should generate code only for these files.  Each file's
@@ -48,6 +50,7 @@ pub struct CodeGeneratorRequest {
 /// The plugin writes an encoded CodeGeneratorResponse to stdout.
 #[derive(Clone, PartialEq, ::prost::Message)]
 #[prost(package="google.protobuf.compiler")]
+#[prost(source_name="CodeGeneratorResponse")]
 pub struct CodeGeneratorResponse {
     /// Error message.  If non-empty, code generation failed.  The plugin process
     /// should exit with status code zero even if it reports an error in this way.
@@ -71,6 +74,7 @@ pub mod code_generator_response {
     /// Represents a single generated file.
     #[derive(Clone, PartialEq, ::prost::Message)]
     #[prost(package="google.protobuf.compiler.CodeGeneratorResponse")]
+    #[prost(source_name="File")]
     pub struct File {
         /// The file name, relative to the output directory.  The name must not
         /// contain "." or ".." components and must be relative, not be absolute (so,
